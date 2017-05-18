@@ -21,6 +21,7 @@ from pyroute2.netlink import nlmsg_atoms
 from pyroute2.netlink.rtnl import RTM_VALUES
 from pyroute2.netlink.rtnl.iw_event import iw_event
 from pyroute2.netlink.exceptions import NetlinkError
+from pyroute2.netlink.rtnl.ifinfmsg.plugins import vxlan as vxlan_data
 
 
 # it's simpler to double constants here, than to change all the
@@ -588,6 +589,7 @@ class ifinfbase(object):
                     'ip6gre': ip6gre_data,
                     'ip6gretap': ip6gre_data,
                     'veth': veth_data,
+                    'vxlan': vxlan_data,
                     'bridge': bridge_data}
         # expand supported interface types
         for kind, plugin in data_plugins:
